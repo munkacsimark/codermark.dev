@@ -1,8 +1,13 @@
 import React from 'react';
 import viewNames from './view-names';
 
-const scrollToView = (event: React.MouseEvent ,view: viewNames): void => {
+const handleNavigation = (event: React.MouseEvent, view: viewNames): void => {
   event.preventDefault();
+  scrollToView(view);
+  window.history.replaceState({}, '', `#${view}`);
+}
+
+const scrollToView = (view: viewNames): void => {
   const selectedView = document.getElementById(view);
   if (selectedView !== null)
     selectedView.scrollIntoView({
@@ -12,5 +17,5 @@ const scrollToView = (event: React.MouseEvent ,view: viewNames): void => {
 }
 
 export {
-  scrollToView,
+  handleNavigation,
 }

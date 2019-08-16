@@ -1,0 +1,34 @@
+@import '../../../../style/colors.scss';
+@import '../../../../style/breakpoint.scss';
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  margin: 0 1.6rem;
+
+  @include breakpoint(tablet) {
+    margin: 0 1.4rem;
+  }
+
+  @include breakpoint(mobile) {
+    margin: 0.8rem auto;
+  }
+}
+
+.link {
+  color: map-get($colors, 'silver');
+  text-decoration: none;
+  text-shadow: 1px 1px 0 map-get($colors, 'black');
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  transition: .2s;
+
+  @include breakpoint(tablet) {
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    color: map-get($colors, 'keppel');
+    transition: .3s;
+  }
+}

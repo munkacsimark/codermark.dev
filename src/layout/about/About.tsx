@@ -2,7 +2,7 @@ import React from 'react';
 
 const About: React.FunctionComponent = () => {
   return (
-    <div id="about">ABOUT</div>
+    <section id="about" style={{"marginTop": "2000px"}}>ABOUT</section>
   );
 }
 

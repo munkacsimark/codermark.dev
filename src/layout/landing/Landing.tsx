@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   viewNames,
-  scrollToView,
+  handleNavigation,
 } from '../../view-router';
 import Particles, { IParticlesParams } from 'react-particles-js';
 import particlesConfig from './particles-config.json';
@@ -10,7 +10,7 @@ import styles from './Landing.module.scss';
 const Landing: React.FunctionComponent = () => {
   return (
     <section
-      id={`${viewNames.LANDING} particles-bg`}
+      id={viewNames.LANDING}
       className={styles.section}>
       <Particles
         className={styles.particles}
@@ -25,7 +25,7 @@ const Landing: React.FunctionComponent = () => {
       <a
         className={styles.showMore}
         href={`/#${viewNames.ABOUT}`}
-        onClick={(event) => scrollToView(event, viewNames.ABOUT)}>
+        onClick={(event) => handleNavigation(event, viewNames.ABOUT)}>
         Show me more
         <svg
           className={styles.showMoreArrow}

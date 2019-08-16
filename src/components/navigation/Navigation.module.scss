@@ -1,0 +1,65 @@
+@import '../../style/colors.scss';
+@import '../../style/breakpoint.scss';
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100vw;
+  height: 6rem;
+  background-color: map-get($colors, 'mine-shaft');
+  box-shadow: 0 2px 0 0 map-get($colors, 'black');
+  padding: 0 2.4rem;
+
+  @include breakpoint(tablet) {
+    height: 4rem;
+  }
+
+  @include breakpoint(mobile) {
+    justify-content: flex-end;
+  }
+
+  &.isSticked {
+    top: 0;
+    left: 0;
+    position: fixed;
+  }
+}
+
+.navigationList {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.mobileMenuButton {
+  display: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: map-get($colors, 'silver');
+  cursor: pointer;
+
+  @include breakpoint(mobile) {
+    display: block;
+  }
+}
+
+// mobile menu magic 🦄
+.navigation.menuIsOpened .navigationList {
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    right: 0;
+    height: auto;
+    background-color: map-get($colors, 'mine-shaft');
+  }
+}

@@ -1,6 +1,6 @@
 import viewNames from './view-names';
-import { scrollToView } from './view-router';
+import { handleNavigation } from './view-router';
 export {
   viewNames,
-  scrollToView,
+  handleNavigation,
 }

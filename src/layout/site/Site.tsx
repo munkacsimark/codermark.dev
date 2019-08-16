@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './Site.module.scss';
 import Navigation from '../../components/navigation';
 import Landing from '../landing';
 import About from '../about';
 import Online from '../online';
 import Contact from '../contact';
+import styles from './Site.module.scss';
 
 const Site: React.FunctionComponent = () => {
   return (

@@ -1,7 +1,7 @@
 enum viewNames {
-  LANDING = 'landing',
+  LANDING = 'home',
   ABOUT = 'about',
-  ONLINE = 'online',
+  ONLINE = 'cyberself',
   CONTACT = 'contact',
 }
 
