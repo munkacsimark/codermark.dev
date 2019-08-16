@@ -8,7 +8,7 @@ import Contact from '../contact';
 
 const Site: React.FunctionComponent = () => {
   return (
-    <main>
+    <main className={styles.main}>
       <Landing />
       <Navigation />
       <About />

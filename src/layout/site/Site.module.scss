@@ -1,3 +1,7 @@
-.site {
-  background-color: red;
+@import '../../style/colors.scss';
+
+.main {
+  ::selection {
+    background: map-get($colors, 'rouge');
+  }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const About: React.FunctionComponent = () => {
   return (
-    <div>ABOUT</div>
+    <div id="about">ABOUT</div>
   );
 }
 
