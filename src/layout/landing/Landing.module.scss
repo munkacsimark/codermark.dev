@@ -13,8 +13,7 @@
   background-color: map-get($colors, 'cod-gray');
 }
 
-.greeting,
-.showMore {
+.greeting {
   text-align: center;
   color: map-get($colors, 'silver');
   text-shadow: 2px 2px 0 map-get($colors, 'black');
@@ -44,38 +43,6 @@
   &:hover {
     color: map-get($colors, 'rouge');
     transition: .4s;
-  }
-}
-
-.showMore {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  bottom: 30px;
-  font-size: 2.4rem;
-  text-decoration: none;
-
-  @include breakpoint(tablet) {
-    font-size: 1.8rem;
-  }
-
-  &:hover {
-    & .showMoreArrow {
-      @include bouncingArrowAnimation;
-    }
-  }
-}
-
-.showMoreArrow {
-  height: 3.6rem;
-  fill: map-get($colors, 'silver');
-  width: 3.6rem;
-  height: 3.6rem;
-
-  @include breakpoint(tablet) {
-    width: 2.4rem;
-    height: 2.4rem;
   }
 }
 

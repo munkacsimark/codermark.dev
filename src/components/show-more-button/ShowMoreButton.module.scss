@@ -1,0 +1,39 @@
+@import '../../style/colors.scss';
+@import '../../style/breakpoint.scss';
+@import '../../style/animations.scss';
+
+.showMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  font-size: 2.4rem;
+  text-decoration: none;
+  text-align: center;
+  color: map-get($colors, 'silver');
+  text-shadow: 2px 2px 0 map-get($colors, 'black');
+  z-index: 1;
+
+  @include breakpoint(tablet) {
+    font-size: 1.8rem;
+  }
+
+  &:hover {
+    & .showMoreArrow {
+      @include bouncingArrowAnimation;
+    }
+  }
+}
+
+.showMoreArrow {
+  height: 3.6rem;
+  fill: map-get($colors, 'silver');
+  width: 3.6rem;
+  height: 3.6rem;
+
+  @include breakpoint(tablet) {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
