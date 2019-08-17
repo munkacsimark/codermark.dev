@@ -1,0 +1,54 @@
+@import '../../style/shared.scss';
+@import '../../style/colors.scss';
+@import '../../style/breakpoint.scss';
+
+.section {
+  @include sectionBase;
+  background-color: darken(map-get($colors, 'silver'), 10%);
+}
+
+.title {
+  @include sectionTitleBase;
+}
+
+.text {
+  font-size: 2rem;
+  line-height: 2.8rem;
+  color: 1px 1px 0 map-get($colors, 'cod-gray');
+  text-shadow: 1px 1px 0 map-get($colors, 'white');
+  max-width: 1200px;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+  }
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 3.6rem auto;
+}
+
+.icon {
+  width: 6.4rem;
+  height: 6.4rem;
+  fill: map-get($colors, 'cod-gray');
+  margin: 0.8rem;
+  transform: scale(1) rotate(0);
+  transition: .3s;
+
+  @include breakpoint(tablet) {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  &:hover {
+    fill: map-get($colors, 'keppel');
+    transform: scale(1.2) rotate(5deg);
+    transition: .2s;
+  }
+}

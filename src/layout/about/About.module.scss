@@ -1,28 +1,14 @@
+@import '../../style/shared.scss';
 @import '../../style/colors.scss';
 @import '../../style/breakpoint.scss';
 
 .section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3.6rem;
+  @include sectionBase;
   background-color: map-get($colors, 'silver');
 }
 
 .title {
-  font-size: 4.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-align: center;
-  color: map-get($colors, 'cod-gray');
-  text-shadow: 2px 2px 0 map-get($colors, 'white');
-  margin-bottom: 3.6rem;
-
-  &::before,
-  &::after {
-    content: '–'
-  }
+  @include sectionTitleBase;
 }
 
 .skills {
