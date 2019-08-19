@@ -15,7 +15,7 @@
   text-transform: uppercase;
   text-align: center;
   color: map-get($colors, 'cod-gray');
-  text-shadow: 2px 2px 0 map-get($colors, 'white');
+  text-shadow: 1px 1px 0 map-get($colors, 'white');
   margin-bottom: 3.6rem;
 
   &::before,

@@ -53,7 +53,7 @@
   flex-shrink: 0;
   border-radius: 50%;
   border: 2px solid map-get($colors, 'cod-gray');
-  box-shadow: 2px 2px 0 map-get($colors, 'white');
+  box-shadow: 1px 1px 0 map-get($colors, 'white');
   margin-right: 4.8rem;
 
   @include breakpoint(tablet) {
