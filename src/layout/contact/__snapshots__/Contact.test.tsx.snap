@@ -16,7 +16,9 @@ exports[`renders correctly 1`] = `
     Want to get in touch or talk about a project? Feel free to contact me here.
   </div>
   <form
+    action="https://formspree.io/munkacsimark@gmail.com"
     className="form"
+    method="POST"
     onSubmit={[Function]}
   >
     <input
