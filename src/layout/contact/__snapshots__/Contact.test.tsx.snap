@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="section"
+  id="contact"
+>
+  <h2
+    className="title"
+  >
+    Contact
+  </h2>
+  <div
+    className="text"
+  >
+    Want to get in touch or talk about a project? Feel free to contact me here.
+  </div>
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <input
+      className="input"
+      name="name"
+      placeholder="What's your name?"
+      type="text"
+    />
+    <input
+      className="input"
+      name="email"
+      placeholder="What's your email?"
+      type="email"
+    />
+    <textarea
+      className="textarea"
+      placeholder="How can I help you?"
+    />
+    <button
+      className="sendButton"
+      type="submit"
+    >
+      Send message
+    </button>
+  </form>
+  <span
+    className="copyText"
+  >
+    Created with ♥ by me - © 
+    2019
+  </span>
+</section>
+`;
