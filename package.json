@@ -16,7 +16,7 @@
     "typescript": "3.5.3"
   },
   "scripts": {
-    "netlify-deploy": "yarn test --watchAll && yarn build",
+    "netlify-deploy": "CI=true yarn test --watchAll && yarn build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --verbose"
