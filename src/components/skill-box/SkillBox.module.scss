@@ -15,7 +15,8 @@
 
 .skillText {
   font-size: 1.8rem;
-  color: 2px 2px 0 map-get($colors, 'cod-gray');
+  line-height: 2rem;
+  color: map-get($colors, 'cod-gray');
   text-shadow: 1px 1px 0 map-get($colors, 'white');
   margin-top: 1.8rem;
 }

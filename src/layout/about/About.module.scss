@@ -51,7 +51,7 @@
   width: 24rem;
   height: 24rem;
   flex-shrink: 0;
-  border-radius: 50%;
+  border-radius: 4px;
   border: 2px solid map-get($colors, 'cod-gray');
   box-shadow: 1px 1px 0 map-get($colors, 'white');
   margin-right: 4.8rem;
@@ -65,10 +65,15 @@
 .aboutText {
   font-size: 2rem;
   line-height: 2.8rem;
-  color: 1px 1px 0 map-get($colors, 'cod-gray');
+  color: map-get($colors, 'cod-gray');
   text-shadow: 1px 1px 0 map-get($colors, 'white');
 
   @include breakpoint(mobile) {
     font-size: 1.8rem;
   }
+}
+
+.highlighted {
+  font-weight: 500;
+  color: map-get($colors, 'rouge');
 }

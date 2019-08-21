@@ -18,7 +18,7 @@ const Contact: React.FunctionComponent = () => {
         Contact
       </h2>
       <div className={styles.text}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam commodo viverra.
+      Want to get in touch or talk about a project? Feel free to contact me here.
       </div>
       <form
         className={styles.form}

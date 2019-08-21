@@ -12,7 +12,13 @@ const Online: React.FunctionComponent = () => {
         Cyberself
       </h2>
       <div className={styles.text}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam commodo viverra. Curabitur consequat a ante quis faucibus. Ut scelerisque, sapien porta tincidunt ultricies, risus tellus commodo nulla, quis auctor metus arcu vitae ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra fermentum eros, nec consectetur mauris finibus quis. Morbi porta massa urna, in vestibulum turpis posuere vel. Quisque vel laoreet nisl. Nullam molestie ullamcorper sem sed pretium. Nulla ultrices erat quis sem molestie ullamcorper.
+        Yup, cyberself is a fully existing word. I have GitHub
+        and GitLab account of course, sometimes I write articles on
+        Medium or dev.to. You can follow me on Twitter, I'm spreading
+        mostly professional stuff there. You can connect with me on
+        LinkedIn and find me on Upwork. I have a shiny Instagram account
+        as well with fancy pictures on it. Get in touch with me in the
+        cyber space.
       </div>
       <div className={styles.icons}>
         <SocialIcon
