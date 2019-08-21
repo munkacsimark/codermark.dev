@@ -15,7 +15,7 @@ const Contact: React.FunctionComponent = () => {
   const messageInput = React.createRef<HTMLTextAreaElement>();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    /*event.preventDefault();
+    event.preventDefault();
     const data: IFormData = {
       name: nameInput.current ? nameInput.current.value : '',
       email: emailInput.current ? emailInput.current.value : '',
@@ -27,7 +27,7 @@ const Contact: React.FunctionComponent = () => {
       body: JSON.stringify(data)
     };
     fetch('https://formspree.io/munkacsimark@gmail.com', fetchOptions)
-      .catch((error: Error) => console.error(error));*/
+      .catch((error: Error) => console.error(error));
   }
 
   return (
@@ -60,6 +60,7 @@ const Contact: React.FunctionComponent = () => {
         <textarea
           ref={messageInput}
           className={styles.textarea}
+          name="message"
           placeholder="How can I help you?"></textarea>
         <button
           className={styles.sendButton}
