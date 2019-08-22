@@ -27,10 +27,8 @@ exports[`renders correctly 1`] = `
       value="contact"
     />
     <input
-      name="fuck-bots"
-    />
-    <input
       className="input"
+      disabled={false}
       name="name"
       placeholder="What's your name?"
       required={true}
@@ -38,6 +36,7 @@ exports[`renders correctly 1`] = `
     />
     <input
       className="input"
+      disabled={false}
       name="email"
       placeholder="What's your email?"
       required={true}
@@ -45,11 +44,13 @@ exports[`renders correctly 1`] = `
     />
     <textarea
       className="textarea"
+      disabled={false}
       name="message"
       placeholder="How can I help you?"
     />
     <button
       className="sendButton"
+      disabled={false}
       type="submit"
     >
       Send message
