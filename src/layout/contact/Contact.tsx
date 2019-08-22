@@ -1,33 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { viewNames } from '../../view-router';
 import styles from './Contact.module.scss';
 
-interface IFormData {
-  name: string,
-  email: string,
-  message: string,
-}
-
 const Contact: React.FunctionComponent = () => {
 
+  const [sent, setSent] = useState(false);
+
+  const form = React.createRef<HTMLFormElement>();
   const nameInput = React.createRef<HTMLInputElement>();
   const emailInput = React.createRef<HTMLInputElement>();
   const messageInput = React.createRef<HTMLTextAreaElement>();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data: IFormData = {
-      name: nameInput.current ? nameInput.current.value : '',
-      email: emailInput.current ? emailInput.current.value : '',
-      message: messageInput.current ? messageInput.current.value : '',
-    }
-    const fetchOptions: RequestInit = {
+    if (!form.current) return;
+    fetch(form.current.action, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: JSON.stringify(data)
-    };
-    fetch('https://formspree.io/munkacsimark@gmail.com', fetchOptions)
-      .catch((error: Error) => console.error(error));
+      body: `name=${encodeURIComponent(nameInput.current ? nameInput.current.value : '-')}&
+        email=${encodeURIComponent(emailInput.current ? emailInput.current.value : '-')}&
+        message=${encodeURIComponent(messageInput.current ? messageInput.current.value : '-')}`
+    })
+    .then(response => response.json())
+    .then(_ => {
+      if (nameInput.current) nameInput.current.disabled = true;
+      if (emailInput.current) emailInput.current.disabled = true;
+      if (messageInput.current) messageInput.current.disabled = true;
+      if (form.current) form.current.reset();
+      setSent(true);
+    })
+    .catch((error: Error) => console.log(error));
   }
 
   return (
@@ -38,24 +40,32 @@ const Contact: React.FunctionComponent = () => {
         Contact
       </h2>
       <div className={styles.text}>
-        Want to get in touch or talk about a project? Feel free to contact me here.
+        {
+          sent
+          ? 'Thanks for your message! I\'ll contact you shortly.'
+          : 'Want to get in touch or talk about a project? Feel free to contact me here.'
+        }
       </div>
       <form
-        action="https://formspree.io/munkacsimark@gmail.com"
+        name="contact"
         method="POST"
         className={styles.form}
         onSubmit={handleSubmit}>
+        <input type="hidden" name="form-name" value="contact" />
+        <input name="fuck-bots" />
         <input
           ref={nameInput}
           className={styles.input}
           type="text"
           name="name"
+          required
           placeholder="What's your name?"/>
         <input
           ref={emailInput}
           className={styles.input}
           type="email"
           name="email"
+          required
           placeholder="What's your email?"/>
         <textarea
           ref={messageInput}

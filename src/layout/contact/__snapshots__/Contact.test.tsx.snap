@@ -16,21 +16,31 @@ exports[`renders correctly 1`] = `
     Want to get in touch or talk about a project? Feel free to contact me here.
   </div>
   <form
-    action="https://formspree.io/munkacsimark@gmail.com"
     className="form"
     method="POST"
+    name="contact"
     onSubmit={[Function]}
   >
+    <input
+      name="form-name"
+      type="hidden"
+      value="contact"
+    />
+    <input
+      name="fuck-bots"
+    />
     <input
       className="input"
       name="name"
       placeholder="What's your name?"
+      required={true}
       type="text"
     />
     <input
       className="input"
       name="email"
       placeholder="What's your email?"
+      required={true}
       type="email"
     />
     <textarea
