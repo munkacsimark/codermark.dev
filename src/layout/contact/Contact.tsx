@@ -11,15 +11,22 @@ const Contact: React.FunctionComponent = () => {
   const emailInput = React.createRef<HTMLInputElement>();
   const messageInput = React.createRef<HTMLTextAreaElement>();
 
+  const encode = (data: {[key: string]: string}) => Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!formElement.current) return;
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `name=${encodeURIComponent(nameInput.current ? nameInput.current.value : '-')}&
-        email=${encodeURIComponent(emailInput.current ? emailInput.current.value : '-')}&
-        message=${encodeURIComponent(messageInput.current ? messageInput.current.value : '-')}`
+      body: encode({
+        'form-name': 'contact',
+        name: nameInput.current ? nameInput.current.value : '-',
+        email: emailInput.current ? emailInput.current.value : '-',
+        message: messageInput.current ? messageInput.current.value : '-',
+      }),
     })
     .then(response => response.json())
     .then(_ => {
