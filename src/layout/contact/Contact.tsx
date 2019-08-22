@@ -28,7 +28,6 @@ const Contact: React.FunctionComponent = () => {
         message: messageInput.current ? messageInput.current.value : '-',
       }),
     })
-    .then(response => response.json())
     .then(_ => {
       if (nameInput.current) nameInput.current.disabled = true;
       if (emailInput.current) emailInput.current.disabled = true;
