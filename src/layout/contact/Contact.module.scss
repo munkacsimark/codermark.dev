@@ -81,6 +81,16 @@
   cursor: pointer;
   transition: .3s;
 
+  &:disabled {
+    background-color: map-get($colors, 'mine-shaft');
+    color: map-get($colors, 'rouge');
+    transition: .2s;
+
+    &:hover {
+      background-color: map-get($colors, 'mine-shaft');
+    }
+  }
+
   &:hover {
     background-color: map-get($colors, 'rouge');
     transition: .2s;

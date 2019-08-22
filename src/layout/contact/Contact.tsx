@@ -17,7 +17,6 @@ const Contact: React.FunctionComponent = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!formElement.current) return;
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -36,6 +35,8 @@ const Contact: React.FunctionComponent = () => {
       setSent(true);
     })
     .catch((error: Error) => console.log(error));
+    if (formElement.current) formElement.current.reset();
+    setSent(true);
   }
 
   return (
@@ -46,11 +47,7 @@ const Contact: React.FunctionComponent = () => {
         Contact
       </h2>
       <div className={styles.text}>
-        {
-          sent
-          ? 'Thanks for your message! I\'ll contact you shortly.'
-          : 'Want to get in touch or talk about a project? Feel free to contact me here.'
-        }
+        Want to get in touch or talk about a project? Feel free to contact me here.
       </div>
       <form
         ref={formElement}
@@ -59,30 +56,37 @@ const Contact: React.FunctionComponent = () => {
         className={styles.form}
         onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
-        <input name="fuck-bots" />
         <input
           ref={nameInput}
           className={styles.input}
           type="text"
           name="name"
           required
-          placeholder="What's your name?"/>
+          placeholder="What's your name?"
+          disabled={sent}/>
         <input
           ref={emailInput}
           className={styles.input}
           type="email"
           name="email"
           required
-          placeholder="What's your email?"/>
+          placeholder="What's your email?"
+          disabled={sent}/>
         <textarea
           ref={messageInput}
           className={styles.textarea}
           name="message"
-          placeholder="How can I help you?"></textarea>
+          placeholder="How can I help you?"
+          disabled={sent}></textarea>
         <button
           className={styles.sendButton}
-          type="submit">
-          Send message
+          type="submit"
+          disabled={sent}>
+          {
+            sent
+            ? 'Thanks for your message!'
+            : 'Send message'
+          }
         </button>
       </form>
       <span className={styles.copyText}>
