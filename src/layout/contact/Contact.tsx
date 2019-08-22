@@ -6,15 +6,15 @@ const Contact: React.FunctionComponent = () => {
 
   const [sent, setSent] = useState(false);
 
-  const form = React.createRef<HTMLFormElement>();
+  const formElement = React.createRef<HTMLFormElement>();
   const nameInput = React.createRef<HTMLInputElement>();
   const emailInput = React.createRef<HTMLInputElement>();
   const messageInput = React.createRef<HTMLTextAreaElement>();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!form.current) return;
-    fetch(form.current.action, {
+    if (!formElement.current) return;
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `name=${encodeURIComponent(nameInput.current ? nameInput.current.value : '-')}&
@@ -26,7 +26,7 @@ const Contact: React.FunctionComponent = () => {
       if (nameInput.current) nameInput.current.disabled = true;
       if (emailInput.current) emailInput.current.disabled = true;
       if (messageInput.current) messageInput.current.disabled = true;
-      if (form.current) form.current.reset();
+      if (formElement.current) formElement.current.reset();
       setSent(true);
     })
     .catch((error: Error) => console.log(error));
@@ -47,6 +47,7 @@ const Contact: React.FunctionComponent = () => {
         }
       </div>
       <form
+        ref={formElement}
         name="contact"
         method="POST"
         className={styles.form}
