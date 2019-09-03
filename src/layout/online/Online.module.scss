@@ -16,7 +16,6 @@
   font-size: 2rem;
   line-height: 2.8rem;
   color: map-get($colors, 'cod-gray');
-  text-shadow: 1px 1px 0 map-get($colors, 'white');
   max-width: 1200px;
 
   @include breakpoint(mobile) {
