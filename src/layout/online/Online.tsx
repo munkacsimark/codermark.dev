@@ -56,7 +56,7 @@ const Online: React.FunctionComponent = () => {
           )}/>
         <SocialIcon
           text="LinkedIn"
-          href="https://codesandbox.io/u/munkacsimark"
+          href="https://www.linkedin.com/in/munkacsimark"
           icon={(
             <svg
               className={styles.icon}
