@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navigation from '../../components/navigation';
 import Landing from '../landing';
 import About from '../about';
@@ -13,9 +13,12 @@ declare global {
 }
 
 const Site: React.FunctionComponent = () => {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push('js', new Date());
-  window.dataLayer.push('config', 'UA-146145292-1');
+
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: any[]) { window.dataLayer.push(arguments) }
+    gtag('js', new Date());
+  });
 
   return (
     <main className={styles.main}>
