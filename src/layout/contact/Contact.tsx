@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { viewNames } from '../../view-router';
+import ReactGA from 'react-ga';
 import styles from './Contact.module.scss';
 
 const Contact: React.FunctionComponent = () => {
@@ -33,6 +34,10 @@ const Contact: React.FunctionComponent = () => {
       if (messageInput.current) messageInput.current.disabled = true;
       if (formElement.current) formElement.current.reset();
       setSent(true);
+      ReactGA.event({
+        category: 'Message',
+        action: 'Message sent',
+      });
     })
     .catch((error: Error) => console.log(error));
     if (formElement.current) formElement.current.reset();

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import styles from './SocialIcon.module.scss';
 
 interface ISocialIconProps {
@@ -8,12 +9,20 @@ interface ISocialIconProps {
 }
 
 const SocialIcon: React.FunctionComponent<ISocialIconProps> = (props) => {
+
+  const handleClick = (text: string) => ReactGA.event({
+    category: 'Social',
+    action: 'Navigation',
+    label: text,
+  });
+
   return (
     <a
       href={props.href}
       title={props.text}
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+      onClick={() => handleClick(props.text)}>
       {props.icon}
       <span className={styles.visuallyHidden}>
         {props.text}
