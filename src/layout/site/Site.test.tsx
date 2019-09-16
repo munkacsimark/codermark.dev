@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Site from './Site';
 
+jest.mock('react-ga');
+
 describe('Site', () => {
   beforeEach(() => {
     (global as any).IntersectionObserver = class IntersectionObserver {

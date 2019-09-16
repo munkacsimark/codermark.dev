@@ -20,6 +20,7 @@ exports[`renders correctly 1`] = `
   >
     <a
       href="https://github.com/munkacsimark"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="GitHub"
@@ -49,6 +50,7 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       href="https://gitlab.com/munkacsimark"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="GitLab"
@@ -78,6 +80,7 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       href="https://codesandbox.io/u/munkacsimark"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="CodeSandbox"
@@ -107,6 +110,7 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       href="https://www.linkedin.com/in/munkacsimark"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="LinkedIn"
@@ -136,6 +140,7 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       href="https://www.upwork.com/freelancers/~019c8a1929f0ef881a"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="Upwork"
@@ -165,6 +170,7 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       href="https://twitter.com/munkacsimark"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="Twitter"
@@ -194,6 +200,7 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       href="https://dev.to/munkacsimark"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="Dev.to"
@@ -223,6 +230,7 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       href="https://medium.com/@munkacsimark"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="Medium"
@@ -252,6 +260,7 @@ exports[`renders correctly 1`] = `
     </a>
     <a
       href="https://www.instagram.com/_codermark"
+      onClick={[Function]}
       rel="noopener noreferrer"
       target="_blank"
       title="Instagram"
