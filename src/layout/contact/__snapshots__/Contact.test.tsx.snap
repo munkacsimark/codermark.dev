@@ -60,7 +60,7 @@ exports[`renders correctly 1`] = `
     className="copyText"
   >
     Created with ♥ by me - © 
-    2019
+    2021
   </span>
 </section>
 `;
